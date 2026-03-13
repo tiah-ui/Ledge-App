@@ -28,14 +28,14 @@
   --radius:12px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{font-size:14px;height:100%}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);height:100%;display:flex;flex-direction:column;overflow:hidden}
+html{font-size:14px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);display:flex;flex-direction:column;overflow:hidden;height:100dvh}
 input,textarea,select,button{font-family:'DM Sans',sans-serif;font-size:13px}
 ::-webkit-scrollbar{width:5px;height:5px}
 ::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.15);border-radius:4px}
 
 /* SIDEBAR */
-.app-shell{display:flex;flex:1;height:100%;overflow:hidden}
+.app-shell{display:flex;flex:1;min-height:0;overflow:hidden}
 .side-nav{width:var(--nav-w);background:var(--navy);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:200;transition:width 0.25s;overflow:hidden}
 .side-nav.col{width:var(--nav-w-col)}
 .snav-head{display:flex;align-items:center;gap:10px;padding:17px 14px 13px;border-bottom:1px solid rgba(255,255,255,0.06);flex-shrink:0;min-width:var(--nav-w)}
@@ -80,7 +80,7 @@ input,textarea,select,button{font-family:'DM Sans',sans-serif;font-size:13px}
 .side-nav.col .fpn-text{opacity:0}
 
 /* MAIN */
-.main-content{margin-left:var(--nav-w);flex:1;display:flex;flex-direction:column;height:100%;overflow:hidden;transition:margin-left .25s}
+.main-content{margin-left:var(--nav-w);flex:1;min-height:0;display:flex;flex-direction:column;overflow:hidden;transition:margin-left .25s}
 .main-content.nav-col{margin-left:var(--nav-w-col)}
 
 /* TOP BAR mobile */
@@ -1048,8 +1048,8 @@ body.dark .search-inp,.dark .filter-sel{background:var(--paper);color:var(--ink)
 <script>
 'use strict';
 /* ════ VERSION ════ */
-const LEDGE_VERSION='7.4';
-const LEDGE_VERSION_NAME='Layout Fix, Tooltips & Full Reset';
+const LEDGE_VERSION='7.4.1';
+const LEDGE_VERSION_NAME='Layout Fix';
 const WHATS_NEW=['🏗 New sidebar navigation — Create · Business · Manage','📱 Mobile responsive — portrait Chrome on Android now works properly','👥 Client address book with autocomplete and full profiles','📋 Quote/Estimate — third document type','🔐 Full encryption — PBKDF2 + AES-GCM protects data at rest','🛡 Brute force lockout — progressive delays after failed attempts','🔑 Recovery phrase hashed — not stored in plaintext','📄 Multi-page invoices — long item lists break correctly across pages','↗ Share sheet — WhatsApp, Email, Telegram, SMS, Copy','📊 Dashboard is the home screen, Records is its own view','✏️ Mark paid / add note directly from the records table'];
 
 /* ════ STATE ════ */
